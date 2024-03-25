@@ -4,8 +4,6 @@ import (
 	"context"
 	"errors"
 	"time"
-
-	"github.com/osiloke/gostore"
 )
 
 var ErrTimeout = errors.New("timeout occurred accessing next key")
