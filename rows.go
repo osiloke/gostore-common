@@ -3,7 +3,6 @@ package common
 import (
 	"context"
 	"errors"
-	"github.com/osiloke/gostore"
 	"time"
 )
 
@@ -56,7 +55,7 @@ func (s *CursorRows) NextKV() ([][]byte, error) {
 		return nil, ErrTimeout
 	case row := <-s.nextChan:
 		if row == nil {
-			return nil, gostore.ErrEOF
+			return nil, ErrEOF
 		}
 		s.ci++
 		return row, nil
