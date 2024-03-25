@@ -92,13 +92,6 @@ type ObjectStore interface {
 	Update(key string, store string, src interface{}) error
 	Replace(key string, store string, src interface{}) error
 	Delete(key string, store string) error
-	// Transactions
-
-	// GetTransaction(txn Transaction, key string, store string, dst interface{}) error
-	// SaveTransaction(txn Transaction, key, store string, src interface{}) (string, error)
-	// UpdateTransaction(txn Transaction, key string, store string, src interface{}) error
-	// ReplaceTransaction(txn Transaction, key string, store string, src interface{}) error
-	// DeleteTransaction(txn Transaction, key string, store string) error
 
 	FilterUpdate(filter map[string]interface{}, src interface{}, store string, opts ObjectStoreOptions) error
 	FilterReplace(filter map[string]interface{}, src interface{}, store string, opts ObjectStoreOptions) error

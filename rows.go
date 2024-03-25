@@ -2,11 +2,8 @@ package common
 
 import (
 	"context"
-	"errors"
 	"time"
 )
-
-var ErrTimeout = errors.New("timeout")
 
 func NewCursorRows() *CursorRows {
 	return &CursorRows{ci: 0, getChan: make(chan bool, 1), nextChan: make(chan [][]byte), exitChan: make(chan bool, 1), doneChan: make(chan bool, 1)}

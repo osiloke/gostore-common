@@ -7,10 +7,13 @@ import (
 	"time"
 )
 
+type Params map[string]interface{}
+
 func timeTrack(start time.Time, name string) {
 	elapsed := time.Since(start)
 	Logger("timeTrack").Debug(fmt.Sprintf("%s took %v", name, elapsed))
 }
+
 func ToInt(str string) (int64, error) {
 	res, err := strconv.ParseInt(str, 0, 64)
 	if err != nil {
@@ -18,8 +21,6 @@ func ToInt(str string) (int64, error) {
 	}
 	return res, err
 }
-
-type Params map[string]interface{}
 
 func ObjectType(i interface{}) reflect.Type {
 	return reflect.TypeOf(i)
